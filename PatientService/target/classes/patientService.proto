@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+
+option java_multiple_files = true;
+option java_package = "grpc.service.patient";
+option java_outer_classname = "PatientServiceImpl";
+
+package PatientService;
+
+// Interface exported by the server.
+service PatientService {
+
+  rpc GeneratePID(PatientIDRequest) returns (PatientIDResponse) {}
+
+}
+
+
+
+
+message PatientIDRequest {
+  string fName = 1;
+  string lName = 2;
+
+}
+
+
+message PatientIDResponse {
+	string PatientID = 1;
+}
+
